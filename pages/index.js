@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar/Navbar";
 import Latest from "../components/Latest/Latest";
 import Site from "../components/Site/Site";
 import Footer from "../components/Footer/Footer";
-// import Footer from "../components/Footer/Footer";
 
 import { getClient } from "../lib/sanity.server";
 import { groq } from "next-sanity";
