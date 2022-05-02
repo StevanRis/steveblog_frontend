@@ -43,7 +43,7 @@ export default function PostPage({
         <meta name="twitter:card" content="summary_large_image" />
         {/* <meta name="twitter:site" content="@username of website. Either twitter:site or twitter:site:id is required." />
         <meta name="twitter:creator" content="@username of content creator" />
-        <meta property="og:url" content={basePath} /> */}
+        <meta property="og:url" content={basePath} />  */}
         <meta property="og:title" content={singlePost[0].title} />
         <meta property="og:description" content={singlePost[0].description} />
         <meta
