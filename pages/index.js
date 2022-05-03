@@ -21,6 +21,10 @@ export default function Home({
     <div>
       <Head>
         <title>{title}</title>
+        <meta
+          name="google-site-verification"
+          content="HJAXtolJhSh7j6C-mYalvwod0C52NGEj0ivu0ymxZ_g"
+        />
         <meta name="description" content={description} />
         <link rel="icon" href={urlFor(logo.asset).width(20).url()} />
       </Head>
