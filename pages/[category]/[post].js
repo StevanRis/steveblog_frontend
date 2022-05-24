@@ -34,6 +34,7 @@ export default function PostPage({
     );
   }
 
+  let postDate = singlePost[0].publishedAt || singlePost[0]._createdAt;
   return (
     <div className="">
       <Head>
@@ -75,10 +76,10 @@ export default function PostPage({
           <div className="absolute shadow-sm border-gray-200 border bg-white py-0 -bottom-6 left-5 right-5 md:left-20 md:right-20 lg:left-32 lg:right-32 flex items-center">
             <div className="hidden top-4 md:flex flex-col items-center bg-gray-100 bg-opacity-50 w py-2 px-6 mx-6 shadow-lg">
               <div className="text-4xl font-extrabold text-gray-700 ">
-                {getDate(singlePost[0]._createdAt)[0]}
+                {getDate(postDate)[0]}
               </div>
               <div className="text-base font-medium h-auto text-gray-700">
-                {getDate(singlePost[0]._createdAt)[1]}
+                {getDate(postDate)[1]}
               </div>
             </div>
             <div className="flex flex-1 flex-col items-center py-3 font-serif text-4xl">

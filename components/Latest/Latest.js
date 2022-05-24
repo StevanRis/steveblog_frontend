@@ -6,6 +6,10 @@ import { urlFor } from "../../lib/sanity";
 import { getDate } from "../../utils/utils";
 
 export default function Latest({ featuredPosts }) {
+  let postDate0 = featuredPosts[0].publishedAt || featuredPosts[0]._createdAt;
+  let postDate1 = featuredPosts[1].publishedAt || featuredPosts[1]._createdAt;
+  let postDate2 = featuredPosts[2].publishedAt || featuredPosts[2]._createdAt;
+  let postDate3 = featuredPosts[3].publishedAt || featuredPosts[3]._createdAt;
   return (
     <main className="xl:container mx-auto py-8 grid md:grid-rows-2 min-h-700 h-xxxxl md:h-xxxl lg:grid-cols-2 lg:grid-rows-1 gap-2 lg:h-screen lg:max-h-760 w-full">
       <div className="relative group">
@@ -19,10 +23,10 @@ export default function Latest({ featuredPosts }) {
         <div className="absolute bottom-0 min-h-1/4 h max-h-full w-full flex items-start bg-slate-600 bg-opacity-40 py-3">
           <div className="hidden md:flex flex-col items-center bg-gray-600 bg-opacity-50 w py-2 px-6 mx-6 shadow-lg">
             <div className="text-3xl font-extrabold text-white ">
-              {getDate(featuredPosts[0]._createdAt)[0]}
+              {getDate(postDate0)[0]}
             </div>
             <div className="text-base font-medium h-auto text-white">
-              {getDate(featuredPosts[0]._createdAt)[1]}
+              {getDate(postDate0)[1]}
             </div>
           </div>
           <div className="pl-2 md:pl-0 flex flex-col items-start">
@@ -69,10 +73,10 @@ export default function Latest({ featuredPosts }) {
           <div className="absolute overflow-clip bottom-0 min-h-2/5 max-h-full w-full flex items-start bg-slate-600 bg-opacity-40 py-3">
             <div className="hidden md:flex flex-col items-center bg-gray-600 bg-opacity-50 w py-1 px-4 mx-4 shadow-lg">
               <div className="text-3xl font-extrabold text-white">
-                {getDate(featuredPosts[1]._createdAt)[0]}
+                {getDate(postDate1)[0]}
               </div>
               <div className="text-base font-medium h-auto text-white">
-                {getDate(featuredPosts[1]._createdAt)[1]}
+                {getDate(postDate1)[1]}
               </div>
             </div>
             <div className="pl-2 md:pl-0 flex flex-col items-start">
@@ -111,10 +115,10 @@ export default function Latest({ featuredPosts }) {
           <div className="absolute overflow-clip bottom-0 min-h-2/5 max-h-full w-full flex items-start bg-slate-600 bg-opacity-40 py-3">
             <div className="hidden md:flex flex-col items-center bg-gray-600 bg-opacity-50 w py-1 px-4 mx-4 shadow-lg">
               <div className="text-3xl font-extrabold text-white">
-                {getDate(featuredPosts[2]._createdAt)[0]}
+                {getDate(postDate2)[0]}
               </div>
               <div className="text-base font-medium h-auto text-white">
-                {getDate(featuredPosts[2]._createdAt)[1]}
+                {getDate(postDate2)[1]}
               </div>
             </div>
             <div className="pl-2 md:pl-0 flex flex-col items-start">
@@ -150,10 +154,10 @@ export default function Latest({ featuredPosts }) {
           <div className="absolute bottom-0 right-0 min-h-1/4 max-h-full w-full flex items-start bg-slate-600 bg-opacity-40 py-3">
             <div className="hidden md:flex flex-col items-center bg-gray-600 bg-opacity-50 w py-1 px-4 mx-4 shadow-lg">
               <div className="text-3xl font-extrabold text-white">
-                {getDate(featuredPosts[3]._createdAt)[0]}
+                {getDate(postDate3)[0]}
               </div>
               <div className="text-base font-medium h-auto text-white">
-                {getDate(featuredPosts[3]._createdAt)[1]}
+                {getDate(postDate3)[1]}
               </div>
             </div>
             <div className="pl-2 md:pl-0 flex flex-col items-start">
