@@ -71,13 +71,17 @@ export default function Links({ categories, aboutUs }) {
             {categories.map((category) => (
               <li key={category._id}>
                 <Link href={`/${category.slug}`}>
-                  <a className="uppercase hover:underline">{category.title}</a>
+                  <a className="uppercase hover:underline whitespace-nowrap px-2.5">
+                    {category.title}
+                  </a>
                 </Link>
               </li>
             ))}
             <li>
               <Link href={`/${aboutUs.slug.current}`}>
-                <a className="uppercase hover:underline">{aboutUs.title}</a>
+                <a className="uppercase hover:underline whitespace-nowrap">
+                  {aboutUs.title}
+                </a>
               </Link>
             </li>
           </ul>
