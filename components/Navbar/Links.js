@@ -62,18 +62,16 @@ export default function Links({ categories, aboutUs }) {
         </div>
 
         <div className="flex-1 max-w-xl md:inline hidden">
-          <ul className="flex justify-around">
+          <ul className="flex flex-nowrap justify-around text-center">
             <li>
               <Link href="/">
                 <a className="uppercase hover:underline">HOME</a>
               </Link>
             </li>
             {categories.map((category) => (
-              <li key={category._id}>
+              <li key={category._id} className="">
                 <Link href={`/${category.slug}`}>
-                  <a className="uppercase hover:underline whitespace-nowrap px-2.5">
-                    {category.title}
-                  </a>
+                  <a className="uppercase hover:underline">{category.title}</a>
                 </Link>
               </li>
             ))}
