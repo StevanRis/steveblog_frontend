@@ -23,7 +23,7 @@ export default function CategoryPage({
   currentPage = 0,
 }) {
   // This includes setting the noindex header because static files always return a status 200 but the rendered not found page page should obviously not be indexed
-  if (!currentCategory[0]) {
+  if (currentCategory === undefined) {
     return (
       <>
         <Head>
@@ -64,6 +64,16 @@ export default function CategoryPage({
 }
 
 export async function getStaticProps(context) {
+  const layoutQuery = groq`
+    *[_type == "layout"]{
+      logo,
+      title
+    }
+  `;
+  const data1 = await getClient().fetch(layoutQuery);
+  const logo = data1[0].logo;
+  const siteTitle = data1[0].title;
+
   const latestPostQuery = groq`
   {
     "latestPosts": *[_type == "category" && slug.current == '${context.params.category.toString()}']{
@@ -94,6 +104,9 @@ export async function getStaticProps(context) {
   `;
   const result2 = await getClient().fetch(currentCategoryQuery);
   const currentCategory = result2.currentCategory;
+
+  // Check if the current Category exsists and if not return with the logo and siteTitle
+  if (!currentCategory[0]) return { props: { logo, siteTitle } };
 
   function isInt(n) {
     return n === +n && n === (n | 0);
@@ -136,16 +149,6 @@ export async function getStaticProps(context) {
   `;
   const data = await getClient().fetch(postQuery);
   const categories = Array.from(data);
-
-  const layoutQuery = groq`
-    *[_type == "layout"]{
-      logo,
-      title
-    }
-  `;
-  const data1 = await getClient().fetch(layoutQuery);
-  const logo = data1[0].logo;
-  const siteTitle = data1[0].title;
 
   const footerQuery = groq`
       *[_type == "footer"]
