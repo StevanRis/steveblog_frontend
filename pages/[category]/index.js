@@ -89,7 +89,7 @@ export async function getStaticProps(context) {
   }
   `;
   const result1 = await getClient().fetch(latestPostQuery);
-  const latestPosts = result1.latestPosts[0].posts;
+  const latestPosts = result1.latestPosts[0]?.posts;
 
   const currentCategoryQuery = groq`
     {
